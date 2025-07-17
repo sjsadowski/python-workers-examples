@@ -1,7 +1,9 @@
+from workers import handler
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 
 
+@handler
 async def on_fetch(request, env):
     import asgi
 
