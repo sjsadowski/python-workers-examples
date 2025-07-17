@@ -1,10 +1,11 @@
+from workers import handler
 import jinja2
 from fastapi import FastAPI, Request
 
 environment = jinja2.Environment()
 template = environment.from_string("Hello, {{ name }}!")
 
-
+@handler
 async def on_fetch(request, env):
     import asgi
 
